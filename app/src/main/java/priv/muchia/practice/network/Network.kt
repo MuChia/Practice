@@ -11,5 +11,7 @@ import priv.muchia.newwork_core.ServiceCreator
  */
 object Network: BaseNetwork() {
     private val mainArticles = ServiceCreator.create<Api>()
-    suspend fun mainArticles(page: Int) = mainArticles.getMainArticles(page).await()
+
+    suspend fun getMainArticles(page: Int) = mainArticles.getMainArticles(page).await()
+    suspend fun getBanner() = mainArticles.getBanner().await()
 }

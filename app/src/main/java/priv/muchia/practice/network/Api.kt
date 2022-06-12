@@ -1,6 +1,7 @@
 package priv.muchia.practice.network
 
-import priv.muchia.practice.model.BaseData
+import priv.muchia.practice.model.BannerData
+import priv.muchia.newwork_core.BaseData
 import priv.muchia.practice.model.MainArticle
 import priv.muchia.practice.model.PagingData
 import retrofit2.Call
@@ -14,6 +15,10 @@ import retrofit2.http.Path
  * Description:
  */
 interface Api {
+
+    @GET("banner/json")
+    fun getBanner(): Call<BaseData<List<BannerData>>>
+
     @GET("article/list/{page}/json")
     fun getMainArticles(@Path("page") page: Int): Call<BaseData<PagingData<MainArticle>>>
 }

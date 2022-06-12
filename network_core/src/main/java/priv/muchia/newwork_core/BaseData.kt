@@ -1,4 +1,4 @@
-package priv.muchia.practice.model
+package priv.muchia.newwork_core
 
 data class BaseData <T>(
     val `data`: T,
