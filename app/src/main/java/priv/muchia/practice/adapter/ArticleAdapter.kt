@@ -16,9 +16,23 @@ import priv.muchia.practice.model.ArticleData
  * Date: 2022/6/13 21:10
  * Description:
  */
-class ArticleAdapter : ListAdapter<ArticleData, ArticleAdapter.ViewHolder>(ArticleDiffCallback()) {
+class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ViewHolder>() {
+    private val data = mutableListOf<ArticleData>()
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val articleTv: TextView = itemView.findViewById(R.id.home_article_tv)
+    }
+
+    fun setData(articleList: List<ArticleData>){
+        data.clear()
+        data.addAll(articleList)
+        notifyDataSetChanged()
+    }
+
+    fun addData(articleList: List<ArticleData>){
+        val position = data.size
+        data.addAll(articleList)
+        notifyItemRangeInserted(position,articleList.size)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,16 +43,8 @@ class ArticleAdapter : ListAdapter<ArticleData, ArticleAdapter.ViewHolder>(Artic
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.articleTv.text = getItem(position).title
-    }
-}
-
-private class ArticleDiffCallback : DiffUtil.ItemCallback<ArticleData>() {
-    override fun areItemsTheSame(oldItem: ArticleData, newItem: ArticleData): Boolean {
-        return oldItem.id == newItem.id
+        holder.articleTv.text = data[position].title
     }
 
-    override fun areContentsTheSame(oldItem: ArticleData, newItem: ArticleData): Boolean {
-        return oldItem == newItem
-    }
+    override fun getItemCount() = data.size
 }
