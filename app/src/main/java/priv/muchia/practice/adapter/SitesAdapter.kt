@@ -1,5 +1,6 @@
 package priv.muchia.practice.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import priv.muchia.practice.R
+import priv.muchia.practice.WebActivity
 import priv.muchia.practice.model.ArticleData
 import priv.muchia.practice.model.SitesData
 
@@ -23,10 +25,18 @@ class SitesAdapter : ListAdapter<SitesData, SitesAdapter.ViewHolder>(SitesDiffCa
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_home_sites, parent, false)
-        )
+        val holder = ViewHolder(LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_home_sites, parent, false))
+
+        holder.itemView.setOnClickListener {
+            val context = holder.itemView.context
+            val position = holder.adapterPosition
+            val intent = Intent(context, WebActivity::class.java)
+            intent.putExtra("url", getItem(position).link)
+            context.startActivity(intent)
+        }
+
+        return holder
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

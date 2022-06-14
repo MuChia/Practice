@@ -1,5 +1,6 @@
 package priv.muchia.practice.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,7 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import priv.muchia.practice.MyApplication.Companion.context
 import priv.muchia.practice.R
+import priv.muchia.practice.WebActivity
 import priv.muchia.practice.model.ArticleData
 
 /**
@@ -23,23 +26,32 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ViewHolder>() {
         val articleTv: TextView = itemView.findViewById(R.id.home_article_tv)
     }
 
-    fun setData(articleList: List<ArticleData>){
+    fun setData(articleList: List<ArticleData>) {
         data.clear()
         data.addAll(articleList)
         notifyDataSetChanged()
     }
 
-    fun addData(articleList: List<ArticleData>){
+    fun addData(articleList: List<ArticleData>) {
         val position = data.size
         data.addAll(articleList)
-        notifyItemRangeInserted(position,articleList.size)
+        notifyItemRangeInserted(position, articleList.size)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_home_article, parent, false)
-        )
+
+        val holder = ViewHolder(LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_home_article, parent, false))
+
+        holder.itemView.setOnClickListener {
+            val context = holder.itemView.context
+            val position = holder.adapterPosition
+            val intent = Intent(context, WebActivity::class.java)
+            intent.putExtra("url", data[position].link)
+            context.startActivity(intent)
+        }
+
+        return holder
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
