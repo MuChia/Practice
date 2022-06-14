@@ -1,6 +1,6 @@
 package priv.muchia.practice.model
 
-data class MainArticle(
+data class ArticleData(
     val apkLink: String,
     val audit: Int,
     val author: String,
@@ -40,4 +40,3 @@ data class MainArticle(
         val url: String,
     )
 }
-

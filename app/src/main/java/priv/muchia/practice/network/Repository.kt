@@ -25,6 +25,10 @@ object Repository : BaseRepository() {
         handleResponse(Network.getBanner())
     }
 
+    fun getSites() = fire(Dispatchers.IO) {
+        handleResponse(Network.getSites())
+    }
+
     fun getMainArticles(page: Int) = fire(Dispatchers.IO) {
         handleResponse(Network.getMainArticles(page))
     }
