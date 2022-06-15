@@ -2,6 +2,7 @@ package priv.muchia.practice
 
 import android.os.Bundle
 import android.view.View
+import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,9 @@ class WebActivity : AppCompatActivity() {
             displayZoomControls = false
             useWideViewPort = true
             loadWithOverviewMode = true
+            loadsImagesAutomatically = true
+            mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+
         }
         url?.let { webView.loadUrl(it) }
     }

@@ -1,6 +1,8 @@
 package priv.muchia.practice
 
 import android.os.Bundle
+import android.util.Log
+import android.view.MotionEvent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.navigation.findNavController
@@ -23,4 +25,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_main2)
         navView.setupWithNavController(navController)
     }
+
+
+
 }

@@ -1,6 +1,7 @@
 package priv.muchia.practice.adapter
 
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,8 +32,12 @@ class SitesAdapter : ListAdapter<SitesData, SitesAdapter.ViewHolder>(SitesDiffCa
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val position = holder.adapterPosition
-            val intent = Intent(context, WebActivity::class.java)
-            intent.putExtra("url", getItem(position).link)
+//            val intent = Intent(context, WebActivity::class.java)
+//            intent.putExtra("url", getItem(position).link)
+
+            val url = Uri.parse(getItem(position).link)
+            val intent = Intent(Intent.ACTION_VIEW, url)
+
             context.startActivity(intent)
         }
 

@@ -1,6 +1,7 @@
 package priv.muchia.practice.adapter
 
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import priv.muchia.practice.MyApplication.Companion.context
 import priv.muchia.practice.R
 import priv.muchia.practice.WebActivity
 import priv.muchia.practice.model.ArticleData
+import retrofit2.http.Url
 
 /**
  * FileName: ArticleAdapter
@@ -46,8 +48,12 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ViewHolder>() {
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val position = holder.adapterPosition
-            val intent = Intent(context, WebActivity::class.java)
-            intent.putExtra("url", data[position].link)
+//            val intent = Intent(context, WebActivity::class.java)
+//            intent.putExtra("url", data[position].link)
+
+            val url = Uri.parse(data[position].link)
+            val intent = Intent(Intent.ACTION_VIEW, url)
+
             context.startActivity(intent)
         }
 
