@@ -10,6 +10,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:fitsSystemWindows="true"
         >
 
@@ -25,12 +26,6 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 app:layout_collapseMode="pin"/>
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/home_search_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                app:layout_collapseMode="pin" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
