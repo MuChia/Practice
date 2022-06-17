@@ -2,6 +2,7 @@ package priv.muchia.practice.adapter
 
 import android.content.Intent
 import android.net.Uri
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -62,7 +63,7 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.articleTv.text = data[position].title
+        holder.articleTv.text = Html.fromHtml(data[position].title, Html.FROM_HTML_OPTION_USE_CSS_COLORS)
     }
 
     override fun getItemCount() = data.size
