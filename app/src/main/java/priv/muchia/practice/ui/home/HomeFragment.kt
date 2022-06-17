@@ -73,6 +73,7 @@ class HomeFragment : Fragment() {
         val viewPager = binding.homeContentVp
         viewPager.adapter = contentAdapter
         binding.homeTabLayout.setupWithViewPager(viewPager)
+
         val articleRecycleView = binding.homeArticleRv
         articleRecycleView.adapter = articleAdapter
         articleRecycleView.addOnScrollListener(object : RecyclerView.OnScrollListener() {

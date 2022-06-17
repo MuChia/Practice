@@ -33,6 +33,10 @@ object Repository : BaseRepository() {
         handleResponse(Network.getMainArticles(page))
     }
 
+    fun search(page: Int, key: String) = fire(Dispatchers.IO) {
+        handleResponse(Network.search(page, key))
+    }
+
 
 
 }
