@@ -29,6 +29,10 @@ object Repository : BaseRepository() {
         handleResponse(Network.getSites())
     }
 
+    fun getHotKey() = fire(Dispatchers.IO) {
+        handleResponse(Network.getHotKey())
+    }
+
     fun getMainArticles(page: Int) = fire(Dispatchers.IO) {
         handleResponse(Network.getMainArticles(page))
     }

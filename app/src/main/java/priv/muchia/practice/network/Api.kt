@@ -22,6 +22,9 @@ interface Api {
     @GET("friend/json")
     fun getSites(): Call<BaseData<List<SitesData>>>
 
+    @GET("hotkey/json")
+    fun getHotkey(): Call<BaseData<List<HotKeyData>>>
+
     @FormUrlEncoded
     @POST("article/query/{page}/json")
     fun search(@Path("page") page: Int, @Field("k") key: String): Call<BaseData<PagingData<SearchResultData>>>

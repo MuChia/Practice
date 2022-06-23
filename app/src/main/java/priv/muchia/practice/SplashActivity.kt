@@ -1,24 +1,26 @@
 package priv.muchia.practice
 
 import android.content.Intent
+import android.os.*
+import android.view.View
+import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.os.Message
+import priv.muchia.practice.ui.demo.TagLayout
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+
         startActivity(Intent(this, MainActivity::class.java))
         finish()
 
-        val handler = Handler(Looper.getMainLooper()){
-            false
-        }
+//        val handler = Handler(Looper.getMainLooper()){
+//            false
+//        }
+//
+//        handler.sendMessage(Message.obtain())
 
-        handler.sendMessage(Message.obtain())
     }
 }

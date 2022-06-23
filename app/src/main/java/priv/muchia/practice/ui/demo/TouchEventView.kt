@@ -7,6 +7,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import priv.muchia.practice.action
+import priv.muchia.practice.dp
 
 /**
  * FileName: TouchEventViewGroup
@@ -16,13 +17,13 @@ import priv.muchia.practice.action
  */
 class TouchEventView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     override fun dispatchTouchEvent(event: MotionEvent): Boolean {
-        Log.e("TouchEvent", "View-----DispatchTouchEvent----------${event.action()}----------")
+        Log.e("TouchEvent", "View-----DispatchTouchEvent----------${event.action}----------")
         return super.dispatchTouchEvent(event)
 //        return true
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        Log.e("TouchEvent", "View-----TouchEvent---------${event.action()}-----------")
+        Log.e("TouchEvent", "View-----TouchEvent---------${event.action}-----------")
         return super.onTouchEvent(event)
 //        return true
     }

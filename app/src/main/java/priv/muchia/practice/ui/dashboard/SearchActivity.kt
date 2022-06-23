@@ -2,6 +2,7 @@ package priv.muchia.practice.ui.dashboard
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import priv.muchia.practice.R
 import priv.muchia.practice.adapter.SearchAdapter
 import priv.muchia.practice.databinding.ActivitySearchBinding
+import priv.muchia.practice.toast
 
 class SearchActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySearchBinding
@@ -17,7 +19,7 @@ class SearchActivity : AppCompatActivity() {
     private var keyWord = ""
     private var page = 0
     private var curPage = 0
-
+    private var hotkeys : List<String>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySearchBinding.inflate(layoutInflater)
@@ -53,7 +55,28 @@ class SearchActivity : AppCompatActivity() {
             true
         }
 
+
+
+        binding.searchTagLayout.setOnItemClickListener { index ->
+            hotkeys?.let {
+                viewModel.search(it[index])
+                editText.setText(it[index])
+            }
+        }
+
+        viewModel.refreshHotKey()
+        showHotKey()
         showResult()
+    }
+
+    private fun showHotKey(){
+        viewModel.hotkey.observe(this){
+            hotkeys = it.getOrNull()
+            hotkeys?.let {
+                binding.searchTagLayout.setTitles(it)
+            }
+
+        }
     }
 
     private fun showResult() {
@@ -61,6 +84,8 @@ class SearchActivity : AppCompatActivity() {
             binding.searchRefresh.isRefreshing = false
             val result = it.getOrNull()
             if ((null != result) && result.datas.isNotEmpty()) {
+                binding.searchRefresh.visibility = View.VISIBLE
+                binding.searchTagLayout.visibility = View.GONE
                 curPage = result.curPage - 1
                 if (curPage == 0) adapter.setData(result.datas)
                 else adapter.addData(result.datas)

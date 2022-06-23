@@ -14,12 +14,12 @@ class TouchEventActivity : AppCompatActivity() {
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
-        Log.d("TouchEvent", "Activity-----DispatchTouchEvent--------${ev.action()}------------")
+        Log.d("TouchEvent", "Activity-----DispatchTouchEvent--------${ev.action}------------")
         return super.dispatchTouchEvent(ev)
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        Log.d("TouchEvent", "Activity-----TouchEvent-----------${event.action()}---------")
+        Log.d("TouchEvent", "Activity-----TouchEvent-----------${event.action}---------")
         return super.onTouchEvent(event)
 //        return true
     }

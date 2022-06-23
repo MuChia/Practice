@@ -15,5 +15,6 @@ object Network: BaseNetwork() {
     suspend fun getMainArticles(page: Int) = mainArticles.getMainArticles(page).await()
     suspend fun getBanner() = mainArticles.getBanner().await()
     suspend fun getSites() = mainArticles.getSites().await()
+    suspend fun getHotKey() = mainArticles.getHotkey().await()
     suspend fun search(page: Int, key: String) = mainArticles.search(page, key).await()
 }
