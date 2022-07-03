@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="priv.muchia.practice">
 
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -31,6 +33,7 @@
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
+            android:theme="@style/Theme.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

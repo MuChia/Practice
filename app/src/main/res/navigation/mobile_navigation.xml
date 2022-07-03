@@ -9,17 +9,23 @@
         android:id="@+id/navigation_home"
         android:name="priv.muchia.practice.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="priv.muchia.practice.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="priv.muchia.practice.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_notifications" >
+
+    </fragment>
 </navigation>

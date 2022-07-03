@@ -7,7 +7,11 @@
             <!--                <size android:height="384dp" />-->
         </shape>
     </item>
-    <item android:top="270dp" android:bottom="270dp" android:left="50dp" android:right="50dp" android:drawable="@drawable/preview_window" >
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:tileMode="disabled"
+            android:src="@drawable/preview_window" />
 
     </item>
 </layer-list>

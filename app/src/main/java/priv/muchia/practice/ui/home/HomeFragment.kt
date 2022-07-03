@@ -1,12 +1,15 @@
 package priv.muchia.practice.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -14,6 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import priv.muchia.practice.R
 import priv.muchia.practice.adapter.ArticleAdapter
 import priv.muchia.practice.adapter.BannerAdapter
 import priv.muchia.practice.adapter.HomeViewPagerAdapter
@@ -21,6 +25,7 @@ import priv.muchia.practice.adapter.SitesAdapter
 import priv.muchia.practice.databinding.FragmentHomeBinding
 import priv.muchia.practice.model.ArticleData
 import priv.muchia.practice.model.BannerData
+import priv.muchia.practice.ui.custom.CustomItemDecoration
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -76,6 +81,15 @@ class HomeFragment : Fragment() {
 
         val articleRecycleView = binding.homeArticleRv
         articleRecycleView.adapter = articleAdapter
+        articleAdapter.setOnItemClickListener { view, position ->
+            when(view.id){
+                R.id.home_collect_img -> {
+                    articleAdapter.getData()[position].collect = true
+                    articleAdapter.notifyItemChanged(position)
+                }
+            }
+        }
+        articleRecycleView.addItemDecoration(CustomItemDecoration())
         articleRecycleView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
@@ -89,14 +103,26 @@ class HomeFragment : Fragment() {
         val sitesRecyclerView = binding.homeSitesRv
         sitesRecyclerView.adapter = sitesAdapter
 
-        viewModel.refreshData()
+        Log.d("HomeFragment", "onCreateView————————————")
+
         showBanner()
         showSites()
 
-        viewModel.setPage(0)
         showArticles()
         slideshow()
+
         return binding.root
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d("HomeFragment", "onCreate————————————")
+
+        viewModel.refreshData()
+
+
+        viewModel.setPage(0)
+
     }
 
     private fun slideshow() {
@@ -148,5 +174,6 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        Log.e("homeFragment", "onDestroyView…………………………")
     }
 }

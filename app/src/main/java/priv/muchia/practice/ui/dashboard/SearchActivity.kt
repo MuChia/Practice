@@ -61,6 +61,8 @@ class SearchActivity : AppCompatActivity() {
             hotkeys?.let {
                 viewModel.search(it[index])
                 editText.setText(it[index])
+                binding.searchRefresh.visibility = View.VISIBLE
+                binding.searchRefresh.isRefreshing = true
             }
         }
 
@@ -70,8 +72,8 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun showHotKey(){
-        viewModel.hotkey.observe(this){
-            hotkeys = it.getOrNull()
+        viewModel.hotkey.observe(this){ result ->
+            hotkeys = result.getOrNull()
             hotkeys?.let {
                 binding.searchTagLayout.setTitles(it)
             }

@@ -1,9 +1,8 @@
-package priv.muchia.practice.ui.demo
+package priv.muchia.practice.ui.custom
 
 import android.content.Context
 import android.graphics.Rect
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,14 +21,14 @@ class TagLayout(context: Context, attrs: AttributeSet) : ViewGroup(context, attr
     private val childrenBounds = mutableListOf<Rect>()
     private var clickListener: ((Int) -> Unit)? = null
 
-    fun setTitles(titles: List<String>): Unit {
+    fun setTitles(titles: List<String>){
         for ((index, title) in titles.withIndex()) {
             val view = LayoutInflater.from(context).inflate(R.layout.item_tag_layout, this, false)
             val textView = view.findViewById<TextView>(R.id.tag_title_tv)
             textView.text = title
             clickListener?.let { listener ->
                 view.setOnClickListener {
-                    listener.invoke(index)
+                    listener(index)
                 }
             }
             addView(view)

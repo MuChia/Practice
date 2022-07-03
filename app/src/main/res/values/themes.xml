@@ -15,6 +15,9 @@
         <item name="android:windowTranslucentStatus">true</item>
         <!-- Customize your theme here. -->
 <!--        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>-->
+    </style>
+
+    <style name="Theme.Splash" parent="Theme.Practice">
         <item name="android:windowBackground">@drawable/preview</item>
     </style>
 </resources>
