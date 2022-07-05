@@ -20,7 +20,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.dashboard.SearchActivity"
+            android:name=".ui.article.SearchActivity"
             android:exported="false" />
         <activity
             android:name=".ui.demo.TouchEventActivity"

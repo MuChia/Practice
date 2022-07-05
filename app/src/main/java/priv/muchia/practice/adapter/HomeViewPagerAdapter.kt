@@ -10,7 +10,7 @@ import androidx.viewpager.widget.PagerAdapter
  * Date: 2022/6/14 00:17
  * Description:
  */
-class HomeViewPagerAdapter(val titles: Array<String>) : PagerAdapter() {
+class HomeViewPagerAdapter(private val titles: Array<String>) : PagerAdapter() {
     override fun getCount() = titles.size
 
     override fun isViewFromObject(view: View, `object`: Any) = view == `object`

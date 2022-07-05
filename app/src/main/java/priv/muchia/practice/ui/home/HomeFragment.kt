@@ -85,7 +85,7 @@ class HomeFragment : Fragment() {
             when(view.id){
                 R.id.home_collect_img -> {
                     articleAdapter.getData()[position].collect = true
-                    articleAdapter.notifyItemChanged(position)
+                    articleAdapter.notifyItemChanged(position, "collect")
                 }
             }
         }

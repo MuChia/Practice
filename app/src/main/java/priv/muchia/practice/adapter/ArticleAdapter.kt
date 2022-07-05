@@ -77,6 +77,14 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ViewHolder>() {
         return holder
     }
 
+    override fun onBindViewHolder(holder: ViewHolder, position: Int, payloads: MutableList<Any>) {
+        if (payloads.isEmpty()) {
+            onBindViewHolder(holder, position)
+        }else {
+            holder.articleCollect.isSelected = data[position].collect
+        }
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.articleTv.text = data[position].title
         holder.articleCollect.isSelected = data[position].collect

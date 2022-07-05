@@ -1,16 +1,14 @@
-package priv.muchia.practice.ui.dashboard
+package priv.muchia.practice.ui.article
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.inputmethod.EditorInfo
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import priv.muchia.practice.R
 import priv.muchia.practice.adapter.SearchAdapter
 import priv.muchia.practice.databinding.ActivitySearchBinding
-import priv.muchia.practice.toast
 
 class SearchActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySearchBinding

@@ -1,4 +1,4 @@
-package priv.muchia.practice.ui.dashboard
+package priv.muchia.practice.ui.article
 
 import androidx.lifecycle.*
 import priv.muchia.practice.model.PagingData

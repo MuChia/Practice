@@ -1,24 +1,21 @@
-package priv.muchia.practice.ui.notifications
+package priv.muchia.practice.ui.person
 
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import priv.muchia.permission_core.Permission
-import priv.muchia.permission_core.PermissionCallback
-import priv.muchia.practice.databinding.FragmentNotificationsBinding
+import priv.muchia.practice.databinding.FragmentPersonBinding
 import priv.muchia.practice.toast
 import priv.muchia.practice.ui.demo.DemoActivity
 
-class NotificationsFragment : Fragment() {
-    private var _binding: FragmentNotificationsBinding? = null
+class PersonFragment : Fragment() {
+    private var _binding: FragmentPersonBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -29,10 +26,10 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+        val personViewModel =
+            ViewModelProvider(this).get(PersonViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentPersonBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
 
