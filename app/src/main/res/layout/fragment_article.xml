@@ -45,6 +45,11 @@
             android:id="@+id/article_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabTextAppearance="@style/MyTabLayout"
+            app:tabIndicatorFullWidth="false"
+            app:tabMode="scrollable"
+            app:tabMinWidth="50dp"
+            app:tabMaxWidth="75dp"
             />
 
     </com.google.android.material.appbar.AppBarLayout>

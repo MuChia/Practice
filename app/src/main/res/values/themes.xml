@@ -21,4 +21,8 @@
     <style name="Theme.Splash" parent="Theme.Practice">
         <item name="android:windowBackground">@drawable/preview</item>
     </style>
+
+    <style name="MyTabLayout">
+        <item name="android:textSize">16dp</item>
+    </style>
 </resources>

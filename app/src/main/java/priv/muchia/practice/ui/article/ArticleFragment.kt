@@ -23,13 +23,12 @@ class ArticleFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private val titles = arrayOf("广场", "导航", "教程", "问答", "体系", "项目", "公众号")
+    private val titles = arrayOf("广场", "导航", "教程", "问答", "体系", "公众号")
     private val fragments = arrayOf(SquaresFragment(),
         NavigationFragment(),
         CourseFragment(),
         FAQsFragment(),
         TreeFragment(),
-        ProjectFragment(),
         OfficialAccountFragment())
 
     override fun onCreateView(

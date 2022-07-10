@@ -13,6 +13,7 @@ import priv.muchia.permission_core.Permission
 import priv.muchia.practice.databinding.FragmentPersonBinding
 import priv.muchia.practice.toast
 import priv.muchia.practice.ui.demo.DemoActivity
+import priv.muchia.practice.ui.project.ProjectViewModel
 
 class PersonFragment : Fragment() {
     private var _binding: FragmentPersonBinding? = null
@@ -27,7 +28,7 @@ class PersonFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         val personViewModel =
-            ViewModelProvider(this).get(PersonViewModel::class.java)
+            ViewModelProvider(this).get(ProjectViewModel::class.java)
 
         _binding = FragmentPersonBinding.inflate(inflater, container, false)
         val root: View = binding.root

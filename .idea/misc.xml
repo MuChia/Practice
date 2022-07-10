@@ -23,12 +23,14 @@
         <entry key="app/src/main/res/drawable/ic_search_black_24dp.xml" value="0.2675" />
         <entry key="app/src/main/res/drawable/preview.xml" value="0.268" />
         <entry key="app/src/main/res/drawable/search_bg.xml" value="0.2925" />
+        <entry key="app/src/main/res/layout/activity_count_down.xml" value="0.3596014492753623" />
         <entry key="app/src/main/res/layout/activity_demo.xml" value="0.3605072463768116" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.39166666666666666" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.3770833333333333" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.3605072463768116" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.3605072463768116" />
         <entry key="app/src/main/res/layout/activity_touch_event.xml" value="0.3605072463768116" />
+        <entry key="app/src/main/res/layout/float_window.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_article.xml" value="0.3596014492753623" />
         <entry key="app/src/main/res/layout/fragment_course.xml" value="0.3596014492753623" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.39166666666666666" />
@@ -44,6 +46,7 @@
         <entry key="app/src/main/res/layout/item_home_banner.xml" value="0.390625" />
         <entry key="app/src/main/res/layout/item_home_sites.xml" value="0.3765625" />
         <entry key="app/src/main/res/layout/item_tag_layout.xml" value="0.45742092457420924" />
+        <entry key="app/src/main/res/layout/popup_count_down.xml" value="0.3596014492753623" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.39166666666666666" />
         <entry key="permission_core/src/main/res/layout/fragment_ghost.xml" value="0.3596014492753623" />
       </map>

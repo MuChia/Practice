@@ -12,7 +12,7 @@
         android:id="@+id/home_appBar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
+        android:background="@android:color/white"
         android:fitsSystemWindows="true"
         >
 
@@ -36,6 +36,8 @@
             android:id="@+id/home_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabTextAppearance="@style/MyTabLayout"
+            app:tabIndicatorFullWidth="false"
             />
 
     </com.google.android.material.appbar.AppBarLayout>

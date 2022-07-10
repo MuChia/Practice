@@ -25,6 +25,42 @@ object Repository : BaseRepository() {
         handleResponse(Network.getBanner())
     }
 
+    fun getProjectClassify() = fire(Dispatchers.IO) {
+        handleResponse(Network.getProjectClassify())
+    }
+
+    fun getTree() = fire(Dispatchers.IO) {
+        handleResponse(Network.getTree())
+    }
+
+    fun getCourses() = fire(Dispatchers.IO) {
+        handleResponse(Network.getCourses())
+    }
+
+    fun getCourseCatalog(page: Int, cid: Int) = fire(Dispatchers.IO) {
+        handleResponse(Network.getCourseCatalog(page, cid))
+    }
+
+    fun getTreeArticles(page: Int, cid: Int) = fire(Dispatchers.IO) {
+        handleResponse(Network.getTreeArticles(page, cid))
+    }
+
+    fun getProjects(page: Int, cid: Int) = fire(Dispatchers.IO) {
+        handleResponse(Network.getProjects(page, cid))
+    }
+
+    fun getOfficialAccounts() = fire(Dispatchers.IO) {
+        handleResponse(Network.getOfficialAccounts())
+    }
+
+    fun getOfficialArticle(page: Int, id: Int) = fire(Dispatchers.IO) {
+        handleResponse(Network.getOfficialArticle(page, id))
+    }
+
+    fun getFAQs(page: Int) = fire(Dispatchers.IO) {
+        handleResponse(Network.getFAQs(page))
+    }
+
     fun getSites() = fire(Dispatchers.IO) {
         handleResponse(Network.getSites())
     }
@@ -32,9 +68,20 @@ object Repository : BaseRepository() {
     fun getHotKey() = fire(Dispatchers.IO) {
         handleResponse(Network.getHotKey())
     }
+    fun getNavigation() = fire(Dispatchers.IO) {
+        handleResponse(Network.getNavigation())
+    }
 
     fun getMainArticles(page: Int) = fire(Dispatchers.IO) {
         handleResponse(Network.getMainArticles(page))
+    }
+
+    fun getNewProject(page: Int) = fire(Dispatchers.IO) {
+        handleResponse(Network.getNewProject(page))
+    }
+
+    fun getSquaresArticles(page: Int) = fire(Dispatchers.IO) {
+        handleResponse(Network.getSquaresArticles(page))
     }
 
     fun search(page: Int, key: String) = fire(Dispatchers.IO) {

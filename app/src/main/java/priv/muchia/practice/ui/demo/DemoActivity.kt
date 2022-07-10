@@ -18,5 +18,8 @@ class DemoActivity : AppCompatActivity() {
         binding.touchEventTv.setOnClickListener {
             startActivity(Intent(this, TouchEventActivity::class.java))
         }
+        binding.countDownTv.setOnClickListener {
+            startActivity(Intent(this, CountDownActivity::class.java))
+        }
     }
 }
