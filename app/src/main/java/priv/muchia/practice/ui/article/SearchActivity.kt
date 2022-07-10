@@ -7,13 +7,13 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import priv.muchia.practice.R
-import priv.muchia.practice.adapter.SearchAdapter
+import priv.muchia.practice.adapter.ArticleAdapter
 import priv.muchia.practice.databinding.ActivitySearchBinding
 
 class SearchActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySearchBinding
     private val viewModel: SearchViewModel by viewModels()
-    private val adapter = SearchAdapter()
+    private val adapter = ArticleAdapter()
     private var keyWord = ""
     private var page = 0
     private var curPage = 0

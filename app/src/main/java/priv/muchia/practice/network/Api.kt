@@ -75,5 +75,5 @@ interface Api {
 
     @FormUrlEncoded
     @POST("article/query/{page}/json")
-    fun search(@Path("page") page: Int, @Field("k") key: String): Call<BaseData<PagingData<SearchResultData>>>
+    fun search(@Path("page") page: Int, @Field("k") key: String): Call<BaseData<PagingData<ArticleData>>>
 }

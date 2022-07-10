@@ -103,7 +103,6 @@ class HomeFragment : Fragment() {
         val sitesRecyclerView = binding.homeSitesRv
         sitesRecyclerView.adapter = sitesAdapter
 
-        Log.d("HomeFragment", "onCreateView————————————")
 
         showBanner()
         showSites()
@@ -116,7 +115,6 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("HomeFragment", "onCreate————————————")
 
         viewModel.refreshData()
 
@@ -174,6 +172,5 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        Log.e("homeFragment", "onDestroyView…………………………")
     }
 }

@@ -1,8 +1,8 @@
 package priv.muchia.practice.ui.article
 
 import androidx.lifecycle.*
+import priv.muchia.practice.model.ArticleData
 import priv.muchia.practice.model.PagingData
-import priv.muchia.practice.model.SearchResultData
 import priv.muchia.practice.network.Repository
 
 /**
@@ -33,8 +33,8 @@ class SearchViewModel : ViewModel() {
 
     val hotkey = _hotKey
 
-    private val _resultData: MediatorLiveData<Result<PagingData<SearchResultData>>> by lazy {
-        MediatorLiveData<Result<PagingData<SearchResultData>>>()
+    private val _resultData: MediatorLiveData<Result<PagingData<ArticleData>>> by lazy {
+        MediatorLiveData<Result<PagingData<ArticleData>>>()
             .apply {
                 addSource(_refresh) {
                     value = it
