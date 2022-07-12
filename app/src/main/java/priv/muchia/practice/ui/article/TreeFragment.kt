@@ -1,31 +1,33 @@
 package priv.muchia.practice.ui.article
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import priv.muchia.practice.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import priv.muchia.practice.databinding.FragmentTreeBinding
 
 class TreeFragment : Fragment() {
     companion object {
         fun newInstance() = TreeFragment()
     }
 
-    private lateinit var viewModel: TreeViewModel
+    private val viewModel: TreeViewModel by viewModels()
+    private var _binding: FragmentTreeBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
-        return inflater.inflate(R.layout.fragment_tree, container, false)
+    ): View {
+        _binding =  FragmentTreeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(TreeViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

@@ -37,8 +37,8 @@ interface Api {
     @GET("tree/json")
     fun getTree(): Call<BaseData<List<TreeData>>>
 
-    @GET("article/list/{page}/json?cid={cid}")
-    fun getTreeArticles(@Path("page") page: Int, @Path("cid") cid: Int): Call<BaseData<PagingData<ArticleData>>>
+    @GET("article/list/{page}/json?")
+    fun getTreeArticles(@Path("page") page: Int, @Query("cid") cid: Int): Call<BaseData<PagingData<ArticleData>>>
 
     @GET("article/listproject/{page}/json")
     fun getNewProject(@Path("page") page: Int): Call<BaseData<PagingData<ArticleData>>>
@@ -46,8 +46,8 @@ interface Api {
     @GET("project/tree/json")
     fun getProjectClassify(): Call<BaseData<List<TreeData>>>
 
-    @GET("project/list/{page}/json?cid={cid}")
-    fun getProjects(@Path("page") page: Int, @Path("cid") cid: Int): Call<BaseData<PagingData<ArticleData>>>
+    @GET("project/list/{page}/json?")
+    fun getProjects(@Path("page") page: Int, @Query("cid") cid: Int): Call<BaseData<PagingData<ArticleData>>>
 
     @GET("article/list/{page}/json")
     fun getMainArticles(@Path("page") page: Int): Call<BaseData<PagingData<ArticleData>>>
@@ -55,8 +55,8 @@ interface Api {
     @GET("wenda/list/{page}/json")
     fun getFAQs(@Path("page") page: Int): Call<BaseData<PagingData<ArticleData>>>
 
-    @GET("article/list/{page}/json?cid={cid}&order_type=1")
-    fun getCourseCatalog(@Path("page") page: Int, @Path("cid") cid: Int): Call<BaseData<PagingData<ArticleData>>>
+    @GET("article/list/{page}/json?order_type=1")
+    fun getCourseCatalog(@Path("page") page: Int, @Query("cid") cid: Int): Call<BaseData<PagingData<ArticleData>>>
 
     @GET("chapter/547/sublist/json")
     fun getCourses(): Call<BaseData<List<TreeData>>>
